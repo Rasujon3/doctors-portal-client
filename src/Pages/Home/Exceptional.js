@@ -1,9 +1,10 @@
 import React from "react";
 import treatment from "../../assets/images/treatment.png";
+import PrimaryButton from "./../Shared/PrimaryButton";
 
 const Exceptional = () => {
   return (
-    <div class="hero min-h-screen lg:px-24">
+    <div class="hero min-h-screen">
       <div class="hero-content flex-col lg:flex-row gap-16">
         <img
           src={treatment}
@@ -22,9 +23,7 @@ const Exceptional = () => {
             here', making it look like readable English. Many desktop publishing
             packages and web page
           </p>
-          <button class="btn btn-primary uppercase text-white">
-            Get Started
-          </button>
+          <PrimaryButton>Get Started</PrimaryButton>
         </div>
       </div>
     </div>
