@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "../../firebase.init";
+import Loading from "../Shared/Loading";
 
 const MyAppointments = () => {
   const [appointment, setAppointment] = useState([]);
-  const [user] = useAuthState(auth);
+  const [user, loading] = useAuthState(auth);
+
   useEffect(() => {
     if (user) {
       const url = `http://localhost:5000/booking?patient=${user.email}`;
@@ -13,6 +15,7 @@ const MyAppointments = () => {
         .then((data) => setAppointment(data));
     }
   }, [user]);
+
   return (
     <div>
       <h2>My Appointments: {appointment.length}</h2>
@@ -28,9 +31,9 @@ const MyAppointments = () => {
             </tr>
           </thead>
           <tbody>
-            {appointment.map((a) => (
+            {appointment.map((a, index) => (
               <tr>
-                <th>1</th>
+                <th>{index + 1}</th>
                 <td>{a.patientName}</td>
                 <td>{a.date}</td>
                 <td>{a.slot}</td>
