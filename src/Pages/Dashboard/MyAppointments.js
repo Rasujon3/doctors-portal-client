@@ -10,7 +10,12 @@ const MyAppointments = () => {
   useEffect(() => {
     if (user) {
       const url = `http://localhost:5000/booking?patient=${user.email}`;
-      fetch(url)
+      fetch(url, {
+        method: "GET",
+        headers: {
+          authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+        },
+      })
         .then((res) => res.json())
         .then((data) => setAppointment(data));
     }
