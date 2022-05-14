@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "../../firebase.init";
 import { useNavigate } from "react-router-dom";
+import { signOut } from "firebase/auth";
 
 const MyAppointments = () => {
   const [appointment, setAppointment] = useState([]);
@@ -21,7 +22,9 @@ const MyAppointments = () => {
         .then((res) => {
           console.log("res", res);
           if (res.status === 401 || res.status === 403) {
-            navigate("/home");
+            signOut(auth);
+            localStorage.removeItem("accessToken");
+            navigate("/");
           }
           return res.json();
         })
@@ -29,7 +32,7 @@ const MyAppointments = () => {
           setAppointment(data);
         });
     }
-  }, [user]);
+  }, [user, navigate]);
 
   return (
     <div>
