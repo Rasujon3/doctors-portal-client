@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from "react";
-import { toast } from "react-toastify";
+import { useEffect, useState } from "react";
 
 const useAdmin = (user) => {
   const [admin, setAdmin] = useState(false);
@@ -21,6 +20,7 @@ const useAdmin = (user) => {
         });
     }
   }, [user]);
+
   return [admin, adminLoading];
 };
 
