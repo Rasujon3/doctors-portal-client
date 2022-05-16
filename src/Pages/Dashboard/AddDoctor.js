@@ -2,12 +2,14 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import { useQuery } from "react-query";
 import Loading from "../Shared/Loading";
+import { toast } from "react-toastify";
 
 const AddDoctor = () => {
   const {
     register,
     formState: { errors },
     handleSubmit,
+    reset,
   } = useForm();
 
   const { data: services, isLoading } = useQuery("services", () =>
@@ -49,6 +51,24 @@ const AddDoctor = () => {
             img: img,
           };
           //   send to your database
+          const url = `http://localhost:5000/doctor`;
+          fetch(url, {
+            method: "POST",
+            headers: {
+              "content-type": "application/json",
+              authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+            },
+            body: JSON.stringify(doctor),
+          })
+            .then((res) => res.json())
+            .then((inderted) => {
+              if (inderted.insertedId) {
+                toast.success("Doctor added successfully");
+                reset();
+              } else {
+                toast.error("Failed to add the doctor");
+              }
+            });
         }
         console.log("imgbb result", result);
       });
