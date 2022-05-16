@@ -1,5 +1,7 @@
 import React from "react";
 import { useForm } from "react-hook-form";
+import { useQuery } from "react-query";
+import Loading from "../Shared/Loading";
 
 const AddDoctor = () => {
   const {
@@ -7,6 +9,14 @@ const AddDoctor = () => {
     formState: { errors },
     handleSubmit,
   } = useForm();
+
+  const { data: services, isLoading } = useQuery("services", () =>
+    fetch("http://localhost:5000/service").then((res) => res.json())
+  );
+
+  if (isLoading) {
+    return <Loading />;
+  }
 
   const onSubmit = async (data) => {
     console.log(data);
@@ -39,6 +49,7 @@ const AddDoctor = () => {
             )}
           </label>
         </div>
+
         <div className="form-control w-full max-w-xs">
           <label className="label">
             <span className="label-text">Email</span>
@@ -71,30 +82,38 @@ const AddDoctor = () => {
             )}
           </label>
         </div>
+
         <div className="form-control w-full max-w-xs">
           <label className="label">
             <span className="label-text">Specialty</span>
           </label>
+          <select {...register("specialty")} class="select w-full max-w-xs">
+            {services.map((service) => (
+              <option key={service._id} value={service.name}>
+                {service.name}
+              </option>
+            ))}
+          </select>
+        </div>
+
+        <div className="form-control w-full max-w-xs">
+          <label className="label">
+            <span className="label-text">Photo</span>
+          </label>
           <input
-            type="text"
-            placeholder="Specialty"
+            type="file"
             className="input input-bordered w-full max-w-xs"
-            {...register("specialty", {
+            {...register("image", {
               required: {
                 value: true,
-                message: "Specialization is Required",
+                message: "image is Required",
               },
             })}
           />
           <label className="label">
-            {errors.password?.type === "required" && (
+            {errors.image?.type === "required" && (
               <span className="label-text-alt text-red-500">
-                {errors.password.message}
-              </span>
-            )}
-            {errors.password?.type === "minLength" && (
-              <span className="label-text-alt text-red-500">
-                {errors.password.message}
+                {errors.image.message}
               </span>
             )}
           </label>
