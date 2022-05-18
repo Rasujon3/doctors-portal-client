@@ -13,7 +13,9 @@ const AddDoctor = () => {
   } = useForm();
 
   const { data: services, isLoading } = useQuery("services", () =>
-    fetch("http://localhost:5000/service").then((res) => res.json())
+    fetch("https://sujon-doctors-portal-server.herokuapp.com/service").then(
+      (res) => res.json()
+    )
   );
 
   const imageStorageKey = "0f72de4f776e48e1dbdd622246559a5c";
@@ -51,7 +53,7 @@ const AddDoctor = () => {
             img: img,
           };
           //   send to your database
-          const url = `http://localhost:5000/doctor`;
+          const url = `https://sujon-doctors-portal-server.herokuapp.com/doctor`;
           fetch(url, {
             method: "POST",
             headers: {

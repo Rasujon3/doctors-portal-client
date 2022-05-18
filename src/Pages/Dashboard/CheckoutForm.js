@@ -13,7 +13,7 @@ const CheckoutForm = ({ appointment }) => {
   const { _id, price, patient, patientName } = appointment;
 
   useEffect(() => {
-    const url = `http://localhost:5000/create-payment-intent`;
+    const url = `https://sujon-doctors-portal-server.herokuapp.com/create-payment-intent`;
     fetch(url, {
       method: "POST",
       headers: {
@@ -74,7 +74,7 @@ const CheckoutForm = ({ appointment }) => {
         appointment: _id,
         transactionId: paymentIntent.id,
       };
-      const url = `http://localhost:5000/booking/${_id}`;
+      const url = `https://sujon-doctors-portal-server.herokuapp.com/booking/${_id}`;
       fetch(url, {
         method: "PATCH",
         headers: {
@@ -112,7 +112,7 @@ const CheckoutForm = ({ appointment }) => {
         <button
           className="btn btn-success btn-sm mt-4"
           type="submit"
-          disabled={!stripe || !clientSecret}
+          disabled={!stripe || !clientSecret || success}
         >
           Pay
         </button>
