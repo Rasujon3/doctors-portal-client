@@ -1,9 +1,11 @@
-# Parts Bazar
+# Doctors Portal
 
 ## [Project Live Link](https://doctors-portal-2d33f.web.app/)
 
 [https://doctors-portal-2d33f.web.app/](https://doctors-portal-2d33f.web.app/)
-
+---
+#### Project Screenshots
+<img width="250" alt="iMAGE1" src="https://i.ibb.co/DkDRF42/fs2.png">|<img width="250" alt="IMAGE2" src="https://i.ibb.co/nbbKdYz/DOCTORSPORTAL2.png">|<img width="250" alt="IMAGE3" src="https://i.ibb.co/JcRK9YX/DOCTORSPORTAL3.png">
 ---
 
 # Short Description
