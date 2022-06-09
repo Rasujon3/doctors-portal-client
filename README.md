@@ -1,70 +1,42 @@
-# Getting Started with Create React App
+# Parts Bazar
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## [Project Live Link](https://doctors-portal-2d33f.web.app/)
 
-## Available Scripts
+[https://doctors-portal-2d33f.web.app/](https://doctors-portal-2d33f.web.app/)
 
-In the project directory, you can run:
+---
 
-### `npm start`
+# Short Description
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### This website is mainly a Dentist Doctor Apponitment website. You can see some information, location, services & contact form in home page. You can appointment for desire doctor & his available time slot. Users can see their appointment & also can delete their appointment also. Users can pay for his appointment with any credit card. In this website, have a admin dashboard. Admin can add, update or delete doctors. Admin also can make a admin as well. Admin can show all appointment & payment status. He can delete appointment which are not complete his payment.
+Admin access:
+Email: mama@mami.com
+pass: 123456
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Project features and functionality
 
-### `npm test`
+- Using Email Password login & registration system in this project.
+- Also using Google login & registration system in this project.
+- Implement admin panel to make user to admin.
+- Protecting the appointment & Dashboard as though without login can't access this page.
+- In Home page, there are 8 sections, those are: Banner, Info, Services, Appointment Info, Summary, Reviews, Contact & Footer.
+- In Appointment page, Users can show some information of appointment & have a button named Book Appointment.
+- After clicking Book Appointment button, You will show a modal in this page if you are log in otherwise you will redircet in login page.
+- In this page, have some information & a book button for booking.
+- In Dashboard section, User can see My appointments, My Reviews & My History options.
+- In My appointments page, Users can see their appointments and payment option.
+- User can pay with any international credit cards and after payment users can see his transaction id.
+- In Dashboard section, Admin can see All users, Manage Doctors, Add a Doctor options.
+- In My All Users page, Admin can make a user as admin.
+- In My Manage DOctors page, Admin can see all doctors. Admin can delete doctor.
+- In Add a Docotor page, Admin can add dortor one by one.
+- Using Local Storage to store & get accesstoken.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## List of Technologies (Frameworks, libraries)
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Using Tailwind & Daisy UI for Responsive Design.
+- Using React-Query for fetching data.
+- Using Firebase for authentication & hosting.
+- Using React-Firebase-Hooks for implement full authentication system.
+- Using React-Router-DOM for routing.
+- Using React-Toastify for showing simple Toast message in this website.
