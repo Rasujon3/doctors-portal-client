@@ -11,7 +11,7 @@ const ManageDoctors = () => {
     isLoading,
     refetch,
   } = useQuery("doctors", () =>
-    fetch("https://sujon-doctors-portal-server.herokuapp.com/doctor", {
+    fetch("https://doctor-portal-server-v750.onrender.com/doctor", {
       headers: {
         authorization: `Bearer ${localStorage.getItem("accessToken")}`,
       },

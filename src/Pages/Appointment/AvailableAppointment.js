@@ -15,7 +15,7 @@ const AvailableAppointment = ({ date }) => {
     refetch,
   } = useQuery(["available", formattedDate], () =>
     fetch(
-      `https://sujon-doctors-portal-server.herokuapp.com/available?date=${formattedDate}`
+      `https://doctor-portal-server-v750.onrender.com/available?date=${formattedDate}`
     ).then((res) => res.json())
   );
 

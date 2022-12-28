@@ -5,7 +5,7 @@ const UserRow = ({ user, refetch }) => {
   const { email, role } = user;
   const makeAdmin = () => {
     fetch(
-      `https://sujon-doctors-portal-server.herokuapp.com/user/admin/${email}`,
+      `https://doctor-portal-server-v750.onrender.com/user/admin/${email}`,
       {
         method: "PUT",
         headers: {

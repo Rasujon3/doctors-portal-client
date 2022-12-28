@@ -13,7 +13,7 @@ const CheckoutForm = ({ appointment }) => {
   const { _id, price, patient, patientName } = appointment;
 
   useEffect(() => {
-    const url = `https://sujon-doctors-portal-server.herokuapp.com/create-payment-intent`;
+    const url = `https://doctor-portal-server-v750.onrender.com/create-payment-intent`;
     fetch(url, {
       method: "POST",
       headers: {
@@ -74,7 +74,7 @@ const CheckoutForm = ({ appointment }) => {
         appointment: _id,
         transactionId: paymentIntent.id,
       };
-      const url = `https://sujon-doctors-portal-server.herokuapp.com/booking/${_id}`;
+      const url = `https://doctor-portal-server-v750.onrender.com/booking/${_id}`;
       fetch(url, {
         method: "PATCH",
         headers: {

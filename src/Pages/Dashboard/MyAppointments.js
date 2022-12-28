@@ -12,7 +12,7 @@ const MyAppointments = () => {
 
   useEffect(() => {
     if (user) {
-      const url = `https://sujon-doctors-portal-server.herokuapp.com/booking?patient=${user.email}`;
+      const url = `https://doctor-portal-server-v750.onrender.com/booking?patient=${user.email}`;
       fetch(url, {
         method: "GET",
         headers: {

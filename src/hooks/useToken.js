@@ -6,7 +6,7 @@ const useToken = (user) => {
     const email = user?.user?.email;
     const currentUser = { email: email };
     if (email) {
-      const url = `https://sujon-doctors-portal-server.herokuapp.com/user/${email}`;
+      const url = `https://doctor-portal-server-v750.onrender.com/user/${email}`;
       fetch(url, {
         method: "PUT",
         headers: {
